@@ -1,35 +1,27 @@
 #include <iostream>
-#include <cstdlib> // Для rand()
-#include <ctime>   // Для time()
-#include "Lamp.h"
-#include "Kettle.h"
-#include "Television.h"
+#include "Player.h"
+#include "IUser.h"
+#include "PlaylistManager.h"
+
+#include "TrackFactory.h"
+#include "PlaylistFactory.h"
+#include "LoggerFactory.h"
 
 int main() {
-   srand(static_cast<unsigned int>(time(0))); // Инициализация генератора случайных чисел
-
-   // Создаем экземпляры различных классов.
-   Lamp lamp("Светодионные", 45);
-   lamp.CalculatePower();
-   Kettle kettle(100,5);
-   kettle.CalculatePower();
-   Television tv("Wi-Fi", 21.5);
-   tv.CalculatePower();
    
-   // Вывод информации о приборах.
-   std::cout << std::endl;
-   lamp.PrintInfo();
-   std::cout << std::endl;
-   kettle.PrintInfo();
-   std::cout << std::endl;
-   tv.PrintInfo();
-   std::cout << std::endl;
+   auto consoleLogger = LoggerFactory::CreateLogger(1); // Консольный логгер
+   auto fileLogger = LoggerFactory::CreateLogger(2, "user_interface.log"); // Файловый логгер
    
-
-   // Подсчет общей потребляемой мощности всех приборов.
-   double totalPowerConsumption = AbstractElectricalDevice::GetTotalPowerConsumption();
-
-   std::cout << "\nОбщая потребляемая мощность всех приборов: " << totalPowerConsumption  << " Вт\n";
-
+   PlaylistManager playlistManager; // Создаем менеджер плейлистов.
+   TrackFactory trackFactory; // Создаем фабрику треков.
+   
+   Player player(playlistManager, trackFactory, consoleLogger); // Создаем плеер с менеджером и фабрикой.
+   
+   IUser userInterface(player, playlistManager, consoleLogger); // Создаем интерфейс пользователя.
+   
+   userInterface.Start(); // Запускаем интерфейс пользователя.
+   
    return 0; 
 }
+
+

@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.5.0)
-project(lab3 VERSION 0.1.0 LANGUAGES C CXX)
+cmake_minimum_required(VERSION 3.10.0)
+project(laba4 VERSION 0.1.0 LANGUAGES C CXX)
 
-add_executable(lab3 AbstractElectricalDevice.cpp HeatingDevice.cpp Kettle.cpp Lamp.cpp LightingDevice.cpp main.cpp SmartDevice.cpp Television.cpp)
+add_executable(laba4 ConsoleLogger.cpp FileLogger.cpp IUser.cpp LoggerFactory.cpp main.cpp Player.cpp Playlist.cpp PlaylistManager.cpp Track.cpp TrackFactory.cpp)
 

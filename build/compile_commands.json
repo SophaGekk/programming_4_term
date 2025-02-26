@@ -1,0 +1,62 @@
+[
+{
+  "directory": "C:/Users/Sopha/Downloads/laba4_tech_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -g -o CMakeFiles\\laba4.dir\\ConsoleLogger.cpp.obj -c C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\ConsoleLogger.cpp",
+  "file": "C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\ConsoleLogger.cpp",
+  "output": "CMakeFiles\\laba4.dir\\ConsoleLogger.cpp.obj"
+},
+{
+  "directory": "C:/Users/Sopha/Downloads/laba4_tech_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -g -o CMakeFiles\\laba4.dir\\FileLogger.cpp.obj -c C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\FileLogger.cpp",
+  "file": "C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\FileLogger.cpp",
+  "output": "CMakeFiles\\laba4.dir\\FileLogger.cpp.obj"
+},
+{
+  "directory": "C:/Users/Sopha/Downloads/laba4_tech_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -g -o CMakeFiles\\laba4.dir\\IUser.cpp.obj -c C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\IUser.cpp",
+  "file": "C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\IUser.cpp",
+  "output": "CMakeFiles\\laba4.dir\\IUser.cpp.obj"
+},
+{
+  "directory": "C:/Users/Sopha/Downloads/laba4_tech_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -g -o CMakeFiles\\laba4.dir\\LoggerFactory.cpp.obj -c C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\LoggerFactory.cpp",
+  "file": "C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\LoggerFactory.cpp",
+  "output": "CMakeFiles\\laba4.dir\\LoggerFactory.cpp.obj"
+},
+{
+  "directory": "C:/Users/Sopha/Downloads/laba4_tech_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -g -o CMakeFiles\\laba4.dir\\main.cpp.obj -c C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\main.cpp",
+  "file": "C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\main.cpp",
+  "output": "CMakeFiles\\laba4.dir\\main.cpp.obj"
+},
+{
+  "directory": "C:/Users/Sopha/Downloads/laba4_tech_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -g -o CMakeFiles\\laba4.dir\\Player.cpp.obj -c C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\Player.cpp",
+  "file": "C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\Player.cpp",
+  "output": "CMakeFiles\\laba4.dir\\Player.cpp.obj"
+},
+{
+  "directory": "C:/Users/Sopha/Downloads/laba4_tech_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -g -o CMakeFiles\\laba4.dir\\Playlist.cpp.obj -c C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\Playlist.cpp",
+  "file": "C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\Playlist.cpp",
+  "output": "CMakeFiles\\laba4.dir\\Playlist.cpp.obj"
+},
+{
+  "directory": "C:/Users/Sopha/Downloads/laba4_tech_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -g -o CMakeFiles\\laba4.dir\\PlaylistManager.cpp.obj -c C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\PlaylistManager.cpp",
+  "file": "C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\PlaylistManager.cpp",
+  "output": "CMakeFiles\\laba4.dir\\PlaylistManager.cpp.obj"
+},
+{
+  "directory": "C:/Users/Sopha/Downloads/laba4_tech_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -g -o CMakeFiles\\laba4.dir\\Track.cpp.obj -c C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\Track.cpp",
+  "file": "C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\Track.cpp",
+  "output": "CMakeFiles\\laba4.dir\\Track.cpp.obj"
+},
+{
+  "directory": "C:/Users/Sopha/Downloads/laba4_tech_prog/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe -g -o CMakeFiles\\laba4.dir\\TrackFactory.cpp.obj -c C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\TrackFactory.cpp",
+  "file": "C:\\Users\\Sopha\\Downloads\\laba4_tech_prog\\TrackFactory.cpp",
+  "output": "CMakeFiles\\laba4.dir\\TrackFactory.cpp.obj"
+}
+]

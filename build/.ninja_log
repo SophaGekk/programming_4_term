@@ -1,0 +1,13 @@
+# ninja log v5
+42	932	7622688444713458	CMakeFiles/laba4.dir/Track.cpp.obj	a9cfffce678e0d5e
+14	974	7622688444983533	CMakeFiles/laba4.dir/ConsoleLogger.cpp.obj	e8b812f80c6b08b7
+18	969	7622688444823484	CMakeFiles/laba4.dir/FileLogger.cpp.obj	e9c433a5990958cb
+35	732	7622706774004812	CMakeFiles/laba4.dir/main.cpp.obj	e0f880c820446060
+24	982	7622688445003551	CMakeFiles/laba4.dir/LoggerFactory.cpp.obj	fc26b82dac8c59d8
+34	1074	7622688446234330	CMakeFiles/laba4.dir/Playlist.cpp.obj	e5db6250e5ba12ff
+21	1039	7622688445927661	CMakeFiles/laba4.dir/IUser.cpp.obj	d097602d6d083cfe
+30	995	7622688445503627	CMakeFiles/laba4.dir/Player.cpp.obj	e911c13360deda16
+47	156	7622645987560071	CMakeFiles/laba4.dir/PlaylistFactory.cpp.obj	430b793e5e46edf4
+732	908	7622706775714786	laba4.exe	1b2312da4a2bd9e4
+38	1241	7622688447970473	CMakeFiles/laba4.dir/PlaylistManager.cpp.obj	41d869bcae509034
+46	967	7622688444743459	CMakeFiles/laba4.dir/TrackFactory.cpp.obj	43af83c02c96cd26

@@ -1,0 +1,3 @@
+C:/Users/Sopha/Downloads/laba4_tech_prog/build/CMakeFiles/laba4.dir
+C:/Users/Sopha/Downloads/laba4_tech_prog/build/CMakeFiles/edit_cache.dir
+C:/Users/Sopha/Downloads/laba4_tech_prog/build/CMakeFiles/rebuild_cache.dir
