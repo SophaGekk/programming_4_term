@@ -214,6 +214,37 @@ QPushButton#btnBack:hover {
       </widget>
      </item>
      <item>
+      <widget class="QSlider" name="volumeSlider">
+       <property name="styleSheet">
+        <string notr="true">
+         QSlider::groove:horizontal {
+             height: 4px;
+             background: #404040;
+             border-radius: 2px;
+         }
+         QSlider::handle:horizontal {
+             background: #ffffff;
+             width: 12px;
+             margin: -4px 0;
+             border-radius: 6px;
+         }
+        </string>
+       </property>
+       <property name="minimum">
+        <number>0</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="value">
+        <number>75</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QToolButton" name="btnRename">
        <property name="visible">
         <bool>false</bool>
@@ -243,37 +274,6 @@ QPushButton#btnBack:hover {
        </property>
        <property name="checkable">
         <bool>true</bool>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QSlider" name="volumeSlider">
-       <property name="styleSheet">
-        <string notr="true">
-         QSlider::groove:horizontal {
-             height: 4px;
-             background: #404040;
-             border-radius: 2px;
-         }
-         QSlider::handle:horizontal {
-             background: #ffffff;
-             width: 12px;
-             margin: -4px 0;
-             border-radius: 6px;
-         }
-        </string>
-       </property>
-       <property name="minimum">
-        <number>0</number>
-       </property>
-       <property name="maximum">
-        <number>100</number>
-       </property>
-       <property name="value">
-        <number>75</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Orientation::Horizontal</enum>
        </property>
       </widget>
      </item>

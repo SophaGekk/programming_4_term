@@ -44,8 +44,8 @@ public:
     QToolButton *btn_play;
     QToolButton *btn_pause;
     QToolButton *btn_next;
-    QToolButton *btnRename;
     QSlider *volumeSlider;
+    QToolButton *btnRename;
     QHBoxLayout *bottomLayout;
     QToolButton *btnRemove;
     QToolButton *btn_add;
@@ -205,27 +205,6 @@ public:
 
         controlsLayout->addWidget(btn_next);
 
-        btnRename = new QToolButton(Widget);
-        btnRename->setObjectName("btnRename");
-        btnRename->setVisible(false);
-        btnRename->setStyleSheet(QString::fromUtf8("\n"
-"      QToolButton {\n"
-"          background: #00ff88;\n"
-"          color: #ffffff;\n"
-"          border: none;\n"
-"          border-radius: 10px;\n"
-"      }\n"
-"      QToolButton:hover {\n"
-"          background: #00cc6a;\n"
-"      }\n"
-"     "));
-        QIcon icon4;
-        icon4.addFile(QString::fromUtf8(":/buttons/rename.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        btnRename->setIcon(icon4);
-        btnRename->setCheckable(true);
-
-        controlsLayout->addWidget(btnRename);
-
         volumeSlider = new QSlider(Widget);
         volumeSlider->setObjectName("volumeSlider");
         volumeSlider->setStyleSheet(QString::fromUtf8("\n"
@@ -247,6 +226,27 @@ public:
         volumeSlider->setOrientation(Qt::Orientation::Horizontal);
 
         controlsLayout->addWidget(volumeSlider);
+
+        btnRename = new QToolButton(Widget);
+        btnRename->setObjectName("btnRename");
+        btnRename->setVisible(false);
+        btnRename->setStyleSheet(QString::fromUtf8("\n"
+"      QToolButton {\n"
+"          background: #00ff88;\n"
+"          color: #ffffff;\n"
+"          border: none;\n"
+"          border-radius: 10px;\n"
+"      }\n"
+"      QToolButton:hover {\n"
+"          background: #00cc6a;\n"
+"      }\n"
+"     "));
+        QIcon icon4;
+        icon4.addFile(QString::fromUtf8(":/buttons/rename.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        btnRename->setIcon(icon4);
+        btnRename->setCheckable(true);
+
+        controlsLayout->addWidget(btnRename);
 
 
         verticalLayout->addLayout(controlsLayout);
