@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>PlaylistSelector</class>
+ <widget class="QWidget" name="PlaylistSelector">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Выбор плейлиста</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QWidget {
+        background: #1a1a1a;
+        color: #ffffff;
+    }
+   QPushButton {
+      padding: 8px 15px;
+      border-radius: 15px;
+      background: #00ff88;
+      color: #ffffff;
+      font-weight: bold;
+   }
+
+   QPushButton:hover {
+      background: #00cc6a;
+   }
+   QListWidget {
+            background: #2d2d2d;
+            color: #00ff88;
+   }
+   QListWidget::item {
+            background: #2d2d2d;
+            color: #00ff88;
+     }
+
+    QListWidget::item:selected {
+            background: #333333;
+            color: #00ff88;
+    }
+   </string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QListWidget" name="playlistListWidget"/>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="btnAddPlaylist">
+       <property name="text">
+        <string>Добавить плейлист</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnRemovePlaylist">
+       <property name="text">
+        <string>Удалить плейлист</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,14 @@
+release/playlistselector.o
+release/main.o
+release/widget.o
+release/Playlist.o
+release/Player.o
+release/PlaylistManager.o
+release/Track.o
+release/TrackFactory.o
+release/ConsoleLogger.o
+release/LoggerFactory.o
+release/FileLogger.o
+release/qrc_buttons.o
+release/moc_playlistselector.o
+release/moc_widget.o

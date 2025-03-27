@@ -1,0 +1,14 @@
+debug/playlistselector.o
+debug/main.o
+debug/widget.o
+debug/Playlist.o
+debug/Player.o
+debug/PlaylistManager.o
+debug/Track.o
+debug/TrackFactory.o
+debug/ConsoleLogger.o
+debug/LoggerFactory.o
+debug/FileLogger.o
+debug/qrc_buttons.o
+debug/moc_playlistselector.o
+debug/moc_widget.o

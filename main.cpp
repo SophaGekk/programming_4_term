@@ -1,27 +1,21 @@
-#include <iostream>
-#include "Player.h"
-#include "IUser.h"
-#include "PlaylistManager.h"
+#include "widget.h"
+#include <QApplication>
+#include "C:/Users/Sopha/Downloads/gg/lab4/LoggerFactory.h"
+#include "playlistselector.h"
 
-#include "TrackFactory.h"
-#include "PlaylistFactory.h"
-#include "LoggerFactory.h"
-
-int main() {
-   
-   auto consoleLogger = LoggerFactory::CreateLogger(1); // Консольный логгер
-   auto fileLogger = LoggerFactory::CreateLogger(2, "user_interface.log"); // Файловый логгер
-   
-   PlaylistManager playlistManager; // Создаем менеджер плейлистов.
-   TrackFactory trackFactory; // Создаем фабрику треков.
-   
-   Player player(playlistManager, trackFactory, consoleLogger); // Создаем плеер с менеджером и фабрикой.
-   
-   IUser userInterface(player, playlistManager, consoleLogger); // Создаем интерфейс пользователя.
-   
-   userInterface.Start(); // Запускаем интерфейс пользователя.
-   
-   return 0; 
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    PlaylistSelector selector;
+    selector.show();
+    return a.exec();
 }
 
-
+// int main(int argc, char *argv[]) {
+//     QApplication a(argc, argv);
+//     Widget w;
+//     w.show();
+//     auto consoleLogger = LoggerFactory::CreateLogger(1); // Консольный логгер
+//     auto fileLogger = LoggerFactory::CreateLogger(2, "user_interface.log"); // Файловый логгер
+//     return a.exec();
+// }
