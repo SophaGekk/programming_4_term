@@ -21,7 +21,7 @@ void runTests_TrackName() {
     std::cout << "OK" << std::endl;
 
     std::cout << "Invalid_name_two..." << std::flush;
-    assert(!widget->isTrackNameValid("   ")); // Возвращает false
+    assert(!widget->isTrackNameValid("  :|? ")); // Возвращает false
     std::cout << "OK" << std::endl;
 
     std::cout << "Invalid_name_three..." << std::flush;
@@ -68,6 +68,7 @@ void runTests_PlaylistName(){
 
 
 void runTests() {
+    std::cout << std::flush;
 
     std::cout << "runTests_TrackName..." << std::flush;
     runTests_TrackName();
