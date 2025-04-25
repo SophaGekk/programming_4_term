@@ -397,11 +397,12 @@ Makefile: SimplePlayer.pro ../../../../msys64/mingw64/share/qt6/mkspecs/win32-g+
 		../../../../msys64/mingw64/share/qt6/mkspecs/features/resources_functions.prf \
 		../../../../msys64/mingw64/share/qt6/mkspecs/features/resources.prf \
 		../../../../msys64/mingw64/share/qt6/mkspecs/features/moc.prf \
+		../../../../msys64/mingw64/share/qt6/mkspecs/features/testlib_defines.prf \
+		../../../../msys64/mingw64/share/qt6/mkspecs/features/win32/console.prf \
 		../../../../msys64/mingw64/share/qt6/mkspecs/features/win32/opengl.prf \
 		../../../../msys64/mingw64/share/qt6/mkspecs/features/uic.prf \
 		../../../../msys64/mingw64/share/qt6/mkspecs/features/qmake_use.prf \
 		../../../../msys64/mingw64/share/qt6/mkspecs/features/file_copies.prf \
-		../../../../msys64/mingw64/share/qt6/mkspecs/features/win32/windows.prf \
 		../../../../msys64/mingw64/share/qt6/mkspecs/features/testcase_targets.prf \
 		../../../../msys64/mingw64/share/qt6/mkspecs/features/exceptions.prf \
 		../../../../msys64/mingw64/share/qt6/mkspecs/features/yacc.prf \
@@ -738,11 +739,12 @@ Makefile: SimplePlayer.pro ../../../../msys64/mingw64/share/qt6/mkspecs/win32-g+
 ../../../../msys64/mingw64/share/qt6/mkspecs/features/resources_functions.prf:
 ../../../../msys64/mingw64/share/qt6/mkspecs/features/resources.prf:
 ../../../../msys64/mingw64/share/qt6/mkspecs/features/moc.prf:
+../../../../msys64/mingw64/share/qt6/mkspecs/features/testlib_defines.prf:
+../../../../msys64/mingw64/share/qt6/mkspecs/features/win32/console.prf:
 ../../../../msys64/mingw64/share/qt6/mkspecs/features/win32/opengl.prf:
 ../../../../msys64/mingw64/share/qt6/mkspecs/features/uic.prf:
 ../../../../msys64/mingw64/share/qt6/mkspecs/features/qmake_use.prf:
 ../../../../msys64/mingw64/share/qt6/mkspecs/features/file_copies.prf:
-../../../../msys64/mingw64/share/qt6/mkspecs/features/win32/windows.prf:
 ../../../../msys64/mingw64/share/qt6/mkspecs/features/testcase_targets.prf:
 ../../../../msys64/mingw64/share/qt6/mkspecs/features/exceptions.prf:
 ../../../../msys64/mingw64/share/qt6/mkspecs/features/yacc.prf:

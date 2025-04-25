@@ -9,6 +9,8 @@
 #include <QDirIterator>
 #include <QLineEdit>
 #include <QInputDialog>
+#include <QMessageBox>
+
 
 
 
@@ -97,6 +99,7 @@ Widget::Widget(const QString &playlistName, PlaylistSelector *selector, QWidget 
     }
 )");
 }
+
 
 Widget::~Widget() {
     delete ui;
@@ -218,10 +221,12 @@ void Widget::on_renameButton_clicked() {
     currentTrackName = currentTrackName.remove("." + extension, Qt::CaseInsensitive);
 
     bool ok;
-    QString newTrackName = QInputDialog::getText(this, tr("Rename Track"),
-                                                 tr("New track name:"), QLineEdit::Normal,
-                                                 currentTrackName, &ok);
+    QString newTrackName = QInputDialog::getText(this, tr("Rename Track"), tr("New track name:"), QLineEdit::Normal,currentTrackName, &ok);
     if (ok && !newTrackName.isEmpty()) {
+        if (!isTrackNameValid(newTrackName)) {
+            QMessageBox::warning(this, tr("Invalid Name"), tr("Пожалуйста придумайте другое навзание треку. Без символов < > : \" / \\ | ? *"));
+            return; // Выходим из функции, если имя не валидно
+        }
         // Формируем новый путь с измененным именем
         QString newFilePath = fileInfo.absolutePath() + "/" + newTrackName + "." + extension;
 

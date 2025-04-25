@@ -23,6 +23,12 @@ public:
     explicit Widget(const QString &playlistName, PlaylistSelector *selector, QWidget *parent = nullptr);
     ~Widget() override;
 
+
+    bool isTrackNameValid(const QString &trackName) const {
+        QRegularExpression regex("^[^<>:\"/\\\\|?*]+$");
+        return regex.match(trackName).hasMatch();
+    }
+
 private slots:
     void on_btn_add_clicked();      // Добавить треки
     void on_btn_play_clicked();     // Воспроизвести
@@ -49,7 +55,7 @@ private slots:
 
 
 
-private:
+protected:
     Ui::Widget *ui;
     QStandardItemModel *m_playListModel; // Модель данных плейлиста для отображения
     QMediaPlayer *m_player;           // Проигрыватель треков
