@@ -25,7 +25,7 @@ public:
 
 
     bool isTrackNameValid(const QString &trackName) const {
-        QRegularExpression regex("^[^<>:\"/\ |?*]+$");
+        QRegularExpression regex("^[^<>:\"/\|?*]+$");
         return regex.match(trackName).hasMatch();
     }
 
