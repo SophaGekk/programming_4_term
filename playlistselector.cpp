@@ -3,6 +3,7 @@
 #include "widget.h"
 #include <QInputDialog>
 #include <QSettings>
+#include <QMessageBox>
 
 PlaylistSelector::PlaylistSelector(QWidget *parent) :
     QWidget(parent),
@@ -21,23 +22,12 @@ PlaylistSelector::PlaylistSelector(QWidget *parent) :
 
 void PlaylistSelector::on_btnAddPlaylist_clicked()
 {
-    if (!isADD)
-    {
-        QString newPlaylistName = QInputDialog::getText(this, "Добавление плейлиста", "Введите имя плейлиста");
-        if (!newPlaylistName.isEmpty()) {
-            // Проверка на уникальность имени плейлиста
-            if (playlistListWidget->findItems(newPlaylistName, Qt::MatchExactly).isEmpty()) {
-               addPlaylist(newPlaylistName);
-            } else {
-                qDebug() << "Плейлист с таким именем уже существует: " << newPlaylistName;
-            }
-        }
+    if (!isADD) {
+        addPlaylist(); // Просто вызываем функцию добавления плейлиста
+    } else {
+        isADD = false; // Сбрасываем флаг, если уже в процессе
     }
-    else
-    {
-        isADD = false;
-        return;
-    }
+
 }
 
 void PlaylistSelector::on_btnRemovePlaylist_clicked()
@@ -69,10 +59,34 @@ PlaylistSelector::~PlaylistSelector()
 }
 
 
-void PlaylistSelector::addPlaylist(const QString &name)
+void PlaylistSelector::addPlaylist()
 {
     if (isADD) return; // Если уже в процессе, выходим
     isADD = true;
+
+    QString name;
+    bool ok;
+
+    do {
+        name = QInputDialog::getText(this, tr("Добавление плейлиста"), tr("Введите имя плейлиста:"), QLineEdit::Normal, QString(), &ok);
+        if (!ok) {
+            isADD = false; // Сбрасываем флаг, если пользователь отменил
+            return; // Выходим из функции, если пользователь отменил
+        }
+
+        // Проверяем валидность имени плейлиста
+        if (!isPlaylistNameValid(name)) {
+            QMessageBox::warning(this, tr("Неверное название плейлиста"), tr("Пожалуйста, придумайте другое название для плейлиста. Без символов < > : \" / | ? *"));
+        } else if (playlistListWidget->findItems(name, Qt::MatchExactly).isEmpty()) {
+            // Если имя валидно и уникально, выходим из цикла
+            break;
+        } else {
+            QMessageBox::warning(this, tr("Плейлист уже существует"), tr("Плейлист с таким именем уже существует. Пожалуйста, выберите другое имя."));
+        }
+
+    } while (true); // Цикл продолжается, пока не будет введено валидное и уникальное имя
+
+
     // 1. Создаем папку для плейлиста
     QString playlistFolderPath = "C:/Users/Sopha/Downloads/gg/Music/" + name;  //Путь где будут храниться плейлисты
     QDir playlistDir(playlistFolderPath);

@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QListWidget>
+#include <QWidget>
 
 
 namespace Ui {
@@ -18,11 +19,16 @@ public:
     ~PlaylistSelector();
 
     void loadPlaylistsFromFolders();
-    void addPlaylist(const QString &name);
+    void addPlaylist();
     void removePlaylist(const QString &name);
     bool isRemoving = false;
     bool isADD = false;
 
+
+    bool isPlaylistNameValid(const QString &playlistName) const {
+        QRegularExpression regex("^[^<>:\"/|?*]+$");
+        return regex.match(playlistName).hasMatch();
+    }
 
 private:
     Ui::PlaylistSelector *ui;
