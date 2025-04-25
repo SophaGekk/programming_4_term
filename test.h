@@ -15,7 +15,7 @@ void runTests() {
     std::cout << "OK" << std::endl;
 
     std::cout << "Valid_name_two..." << std::flush;
-    assert(widget->isTrackNameValid("Another_Valid_Track.mp3")); // Возвращает true
+    assert(widget->isTrackNameValid("Another_Valid_Track+$.mp3")); // Возвращает true
     std::cout << "OK" << std::endl;
 
     std::cout << "Invalid_name_one..." << std::flush;

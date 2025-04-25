@@ -11,10 +11,6 @@
 #include <QInputDialog>
 #include <QMessageBox>
 
-
-
-
-
 int currentTrackIndex = 0;
 
 Widget::Widget(const QString &playlistName, PlaylistSelector *selector, QWidget *parent) :
@@ -221,28 +217,36 @@ void Widget::on_renameButton_clicked() {
     currentTrackName = currentTrackName.remove("." + extension, Qt::CaseInsensitive);
 
     bool ok;
-    QString newTrackName = QInputDialog::getText(this, tr("Rename Track"), tr("New track name:"), QLineEdit::Normal,currentTrackName, &ok);
-    if (ok && !newTrackName.isEmpty()) {
-        if (!isTrackNameValid(newTrackName)) {
-            QMessageBox::warning(this, tr("Invalid Name"), tr("Пожалуйста придумайте другое навзание треку. Без символов < > : \" / \\ | ? *"));
-            return; // Выходим из функции, если имя не валидно
-        }
-        // Формируем новый путь с измененным именем
-        QString newFilePath = fileInfo.absolutePath() + "/" + newTrackName + "." + extension;
+    QString newTrackName;
 
-        // Копируем файл с новым именем
-        if (QFile::copy(filePath, newFilePath)) {
-            if (QFile::remove(filePath)) {
-                // Обновляем модель
-                m_playListModel->setData(index.sibling(index.row(), 0), newTrackName);
-                m_playListModel->setData(index.sibling(index.row(), 1), newFilePath);
-            } else {
-                qDebug() << "Ошибка удаления оригинала";
-            }
-        } else {
-            qDebug() << "Ошибка переимнования.";
+    do {
+        newTrackName = QInputDialog::getText(this, tr("Rename Track"), tr("New track name:"), QLineEdit::Normal, currentTrackName, &ok);
+        if (!ok) return; // Если пользователь отменил, выходим из функции
+        if (newTrackName.isEmpty()) {
+            QMessageBox::warning(this, tr("Invalid Name"), tr("Имя трека не может быть пустым."));
+            continue; // Повторяем запрос
         }
+        if (!isTrackNameValid(newTrackName)) {
+            QMessageBox::warning(this, tr("Invalid Name"), tr("Пожалуйста, придумайте другое название треку. Без символов < > : \" / \\ | ? *"));
+        }
+    } while (!isTrackNameValid(newTrackName) || newTrackName.isEmpty());
+
+    // Формируем новый путь с измененным именем
+    QString newFilePath = fileInfo.absolutePath() + "/" + newTrackName + "." + extension;
+
+    // Копируем файл с новым именем
+    if (QFile::copy(filePath, newFilePath)) {
+        if (QFile::remove(filePath)) {
+            // Обновляем модель
+            m_playListModel->setData(index.sibling(index.row(), 0), newTrackName);
+            m_playListModel->setData(index.sibling(index.row(), 1), newFilePath);
+        } else {
+            qDebug() << "Ошибка удаления оригинала";
+        }
+    } else {
+        qDebug() << "Ошибка переимнования.";
     }
+
 }
 
 void Widget::on_playlistView_clicked(const QModelIndex &index) {
